@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Gotta get this out of my system</title>
+</head>
+<body>
+
+    <button id="addCustomer">Add Customer</button>
+
+    <div id="masterArea"></div>
+
+    <div id="detailArea"></div>
+
+    <!-- 'npm install jquery' and 'npm install mustache', or just change the src tags here -->
+    <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="node_modules/mustache/mustache.min.js" type="text/javascript"></script>
+
+    <script id="masterView" type="x-tmpl-mustache">
+        <table>
+            <tr><th>Name</th><th>Shoe Size</th></tr>
+            {{#customers}}
+            <tr><td>{{name}}</td><td>{{shoeSize}}</td></tr>
+            {{/customers}}
+        </table>
+    </script>
+
+    <script id="editView" type="x-tmpl-mustache">
+        <p><label>Name: <input type="text" id="name" /></label></p>
+        <p><label>Shoe Size: <input type="text" id="shoeSize" /></label></p>
+        <p><input type="button" id="saveCustomer" value="Save" /></p>
+    </script>
+
+    <script src="v.js" type="text/javascript"></script>
+    <script src="index.controller.v.js" type="text/javascript"></script>
+
+</body>
+</html>
